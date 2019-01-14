@@ -8,6 +8,9 @@ class MeijuSpider(scrapy.Spider):
     start_urls = ['https://www.meijutt.com/new100.html']  # 要爬取的网址
 
     def parse(self, response):
+        # print(response.status_code,response.content,response.text)
+        # 非框架写法 dom = lxml.etree.HTML(response.text) ; dom.xpath('')
+        # scrpay框架正则写法 Selector(response.text).xpath('').extract()
         movies = response.xpath('/html/body/div[3]/div[3]/div[1]/ul/li')
         for each_movie in movies:
             item = MovieItem()
