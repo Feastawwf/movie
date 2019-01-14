@@ -11,4 +11,6 @@ import scrapy
 class MovieItem(scrapy.Item):
     # define the fields for your item here like:
     # name = scrapy.Field()
+    # 类似 django orm中的models.py
+    # item不管什么字段都是scrapy.Field()    不区分int str类型
     name = scrapy.Field()
